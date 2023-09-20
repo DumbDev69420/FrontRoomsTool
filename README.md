@@ -8,7 +8,11 @@ PLEASE USE THIS RESPONSIBLE AND ETHICAL, BY USING THIS TRAINER ONLY IN SINGLEPLA
 
 
 Imgui-Directx11 hook base used from: https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook
+
+
 json lib:https://github.com/open-source-parsers/jsoncpp
+
+
 image lib:https://github.com/nothings/stb
 
 
