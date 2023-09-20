@@ -1,0 +1,1604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{04B17470-CB82-4724-904B-25445926AB86}</ProjectGuid>
+    <RootNamespace>ImGuiDirectX11KieroHook</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <ProjectName>EscapeTheThe</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;R:\Vs\Projects\Escape The Niggers\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook;C:\Dumper-7;C:\Dumper-7\4.27.2-18319896+++UE4+Release-4.27</IncludePath>
+    <TargetName>EscapeTheMonkeys</TargetName>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;R:\Vs\Projects\Escape The Niggers\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook;C:\Dumper-7;C:\Dumper-7\4.27.2-18319896+++UE4+Release-4.27</IncludePath>
+    <SourcePath>R:\Vs\Projects\Dawgs of the Forest - Kopie\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook;$(SourcePath)</SourcePath>
+    <TargetName>EscapeTheMonkeys</TargetName>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;R:\Vs\Projects\Escape The BB\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\Replc</IncludePath>
+    <TargetName>EscapeTheMonkeys</TargetName>
+    <ExternalIncludePath>R:\Vs\Projects\Escape The BB\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\Replc\SDK;$(ExternalIncludePath)</ExternalIncludePath>
+    <SourcePath>R:\Vs\Projects\Escape The BB\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\Replc\SDK</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;R:\Vs\Projects\Escape The BB\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\Replc</IncludePath>
+    <TargetName>EscapeTheMonkeys</TargetName>
+    <SourcePath>R:\Vs\Projects\Escape The BB\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\Replc\SDK</SourcePath>
+    <ExternalIncludePath>R:\Vs\Projects\Escape The BB\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\Replc\SDK;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="json\jsoncpp.cpp" />
+    <ClCompile Include="kiero\kiero.cpp" />
+    <ClCompile Include="kiero\minhook\src\buffer.c" />
+    <ClCompile Include="kiero\minhook\src\hde\hde32.c" />
+    <ClCompile Include="kiero\minhook\src\hde\hde64.c" />
+    <ClCompile Include="kiero\minhook\src\hook.c" />
+    <ClCompile Include="kiero\minhook\src\trampoline.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="proc.cpp" />
+    <ClCompile Include="Replc\SDK\Backrooms_functions.cpp" />
+    <ClCompile Include="Replc\SDK\BPCharacter_Demo_functions.cpp" />
+    <ClCompile Include="Replc\SDK\BP_DroppedItem_functions.cpp" />
+    <ClCompile Include="Replc\SDK\BP_Item_Flashlight_functions.cpp" />
+    <ClCompile Include="Replc\SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="Replc\SDK\Engine_functions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kiero\minhook\dll_resources\MinHook.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="imgui\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="kiero\kiero.h" />
+    <ClInclude Include="kiero\minhook\include\MinHook.h" />
+    <ClInclude Include="kiero\minhook\src\buffer.h" />
+    <ClInclude Include="kiero\minhook\src\hde\hde32.h" />
+    <ClInclude Include="kiero\minhook\src\hde\hde64.h" />
+    <ClInclude Include="kiero\minhook\src\hde\pstdint.h" />
+    <ClInclude Include="kiero\minhook\src\hde\table32.h" />
+    <ClInclude Include="kiero\minhook\src\hde\table64.h" />
+    <ClInclude Include="kiero\minhook\src\trampoline.h" />
+    <ClInclude Include="proc.h" />
+    <ClInclude Include="Replc\SDK.hpp" />
+    <ClInclude Include="Replc\SDK\2_FFT_Resolution_classes.hpp" />
+    <ClInclude Include="Replc\SDK\2_FFT_Resolution_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\2_FFT_Resolution_structs.hpp" />
+    <ClInclude Include="Replc\SDK\8_FFT_H_Ocean_Sim_classes.hpp" />
+    <ClInclude Include="Replc\SDK\8_FFT_H_Ocean_Sim_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\8_FFT_H_Ocean_Sim_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ActorLayerUtilities_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ActorLayerUtilities_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ActorLayerUtilities_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ActorSequence_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ActorSequence_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ActorSequence_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AC_Swimming_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AC_Swimming_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AC_Swimming_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AdvancedSessions_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AdvancedSessions_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AdvancedSessions_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AdvancedSteamSessions_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AdvancedSteamSessions_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AdvancedSteamSessions_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Animation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Animation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Animation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Hound_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Hound_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Hound_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Moth_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Moth_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AIC_Moth_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AIModule_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AIModule_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AIModule_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AndroidPermission_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AndroidPermission_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AndroidPermission_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AnimationCore_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AnimationCore_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AnimationCore_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AnimationSharing_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AnimationSharing_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AnimationSharing_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AnimBP_Doll_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AnimBP_Doll_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AnimBP_Doll_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AnimBP_Moth_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AnimBP_Moth_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AnimBP_Moth_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AnimGraphRuntime_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AnimGraphRuntime_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AnimGraphRuntime_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ApexDestruction_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ApexDestruction_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ApexDestruction_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AppleImageUtils_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AppleImageUtils_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AppleImageUtils_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ArcadeEnding_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ArcadeEnding_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ArcadeEnding_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ArchVisCharacter_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ArchVisCharacter_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ArchVisCharacter_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AssetRegistry_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AssetRegistry_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AssetRegistry_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AssetTags_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AssetTags_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AssetTags_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AsyncLoadingScreen_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AsyncLoadingScreen_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AsyncLoadingScreen_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AudioAnalyzer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AudioAnalyzer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AudioAnalyzer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AudioCapture_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AudioCapture_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AudioCapture_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AudioExtensions_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AudioExtensions_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AudioExtensions_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AudioMixer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AudioMixer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AudioMixer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AudioPlatformConfiguration_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AudioPlatformConfiguration_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AudioPlatformConfiguration_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AudioSynesthesia_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AudioSynesthesia_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AudioSynesthesia_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AugmentedReality_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AugmentedReality_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AugmentedReality_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AutomationUtils_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AutomationUtils_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AutomationUtils_structs.hpp" />
+    <ClInclude Include="Replc\SDK\AvfMediaFactory_classes.hpp" />
+    <ClInclude Include="Replc\SDK\AvfMediaFactory_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\AvfMediaFactory_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Backrooms_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Backrooms_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Backrooms_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BacktraceBlueprintLibrary_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BacktraceBlueprintLibrary_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BacktraceBlueprintLibrary_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BacktraceSettingsLibrary_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BacktraceSettingsLibrary_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BacktraceSettingsLibrary_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_AIC_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_AIC_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_AIC_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Bacteria_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BasePS_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BasePS_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BasePS_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Base_GM_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Base_GM_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Base_GM_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Basic.hpp" />
+    <ClInclude Include="Replc\SDK\BlockoutToolsPlugin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BlockoutToolsPlugin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BlockoutToolsPlugin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BoatEQS_Query_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BoatEQS_Query_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BoatEQS_Query_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Boat_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Boat_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Boat_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BPCharacter_Demo_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BPCharacter_Demo_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BPCharacter_Demo_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BPFL_SaveSystem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BPFL_SaveSystem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BPFL_SaveSystem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BPI_EventItem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BPI_EventItem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BPI_EventItem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BPI_KeyboardInteraction_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BPI_KeyboardInteraction_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BPI_KeyboardInteraction_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Ambience_Manager_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Ambience_Manager_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Ambience_Manager_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Animation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Animation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Animation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Antize_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Antize_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Antize_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ArcadeChunk_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ArcadeChunk_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ArcadeChunk_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_BasePlayerController_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_BasePlayerController_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_BasePlayerController_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Breakable_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Breakable_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Breakable_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_CameraManager_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_CameraManager_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_CameraManager_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Card_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Card_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Card_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Chainsaw_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Chainsaw_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Chainsaw_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ChunkActor_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ChunkActor_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ChunkActor_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ClimbingArms_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ClimbingArms_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ClimbingArms_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake3_2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake3_2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake3_2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake3_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake3_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake3_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake_5_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake_5_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake_5_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Climb_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_CloseableInterface_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_CloseableInterface_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_CloseableInterface_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Destructible_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Destructible_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Destructible_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DismemberComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DismemberComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DismemberComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Dismembered_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Dismembered_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Dismembered_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DivingHelmet_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DivingHelmet_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DivingHelmet_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Diving_Helmet_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Diving_Helmet_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Diving_Helmet_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Doll_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Doll_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Doll_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_AlmondBottle_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_AlmondBottle_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_AlmondBottle_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_AlmondWater_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_AlmondWater_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_AlmondWater_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_BugSpray_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_BugSpray_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_BugSpray_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Chainsaw_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Chainsaw_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Chainsaw_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Crowbar_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Crowbar_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Crowbar_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_DivingHelmet_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_DivingHelmet_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_DivingHelmet_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_EnergyBar_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_EnergyBar_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_EnergyBar_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_FlareGun_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_FlareGun_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_FlareGun_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Flashlight_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Flashlight_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Flashlight_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Jelly_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Jelly_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Jelly_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Juice_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Juice_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Juice_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_LiDAR_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_LiDAR_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_LiDAR_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_LiquidPain_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_LiquidPain_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_LiquidPain_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Rope_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Rope_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Rope_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Thermometer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Thermometer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_Thermometer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_WalkieTalkie_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_WalkieTalkie_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_DroppedItem_WalkieTalkie_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Electrocute_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Electrocute_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Electrocute_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Elevator_Heavy_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Elevator_Heavy_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Elevator_Heavy_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Elevator_Impact_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Elevator_Impact_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Elevator_Impact_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_EndingSequence_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_EndingSequence_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_EndingSequence_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_EnergyBar_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_EnergyBar_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_EnergyBar_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Fish_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Fish_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Fish_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlareGun_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlareGun_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlareGun_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlareProjectile_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlareProjectile_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlareProjectile_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlashlightVolume_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlashlightVolume_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FlashlightVolume_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FluidSim_01_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FluidSim_01_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FluidSim_01_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FL_GameSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FL_GameSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_FL_GameSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Heavy_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Heavy_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Heavy_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Hound_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Hound_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Hound_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Idle_Shake2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Idle_Shake2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Idle_Shake2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Idle_Shake_Long_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Idle_Shake_Long_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Idle_Shake_Long_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_AlmondBottle_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_AlmondBottle_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_AlmondBottle_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_AlmondWater_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_AlmondWater_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_AlmondWater_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_BugSpray_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_BugSpray_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_BugSpray_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Chainsaw_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Chainsaw_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Chainsaw_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Crowbar_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Crowbar_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Crowbar_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Flashlight_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Flashlight_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_Flashlight_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Item_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Juice_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Juice_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Juice_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LightFade_Box_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LightFade_Box_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LightFade_Box_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Lighthouse_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Lighthouse_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Lighthouse_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LiquidPain_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LiquidPain_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LiquidPain_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Liquid_Pain_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Liquid_Pain_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Liquid_Pain_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LobbyActor_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LobbyActor_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LobbyActor_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LobbySaveGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LobbySaveGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_LobbySaveGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MainMenu_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MainMenu_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MainMenu_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MenuActor_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MenuActor_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MenuActor_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MenuFlickering_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MenuFlickering_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MenuFlickering_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MothJelly_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MothJelly_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MothJelly_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Moth_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Moth_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Moth_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MyGameInstance_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MyGameInstance_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MyGameInstance_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MySaveGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MySaveGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_MySaveGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_New_SaveGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_New_SaveGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_New_SaveGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Ocean_Manager_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Ocean_Manager_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Ocean_Manager_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RefreshWaterBodies_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RefreshWaterBodies_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RefreshWaterBodies_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RopeZone_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RopeZone_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RopeZone_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Rope_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Rope_Floor_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Rope_Floor_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Rope_Floor_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Rope_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Rope_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RowBoat_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RowBoat_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_RowBoat_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ScannerComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ScannerComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ScannerComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ScannerDirector_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ScannerDirector_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_ScannerDirector_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Scanner_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Scanner_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Scanner_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_SG_GameSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_SG_GameSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_SG_GameSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Spectator_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Spectator_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Spectator_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Sprint_Shake_2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Sprint_Shake_2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Sprint_Shake_2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Storm_Volume_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Storm_Volume_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Storm_Volume_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Swim_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Swim_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Swim_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Thermometer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Thermometer_Display_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Thermometer_Display_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Thermometer_Display_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Thermometer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Thermometer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Underwater_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Underwater_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Underwater_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_VRMenu_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_VRMenu_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_VRMenu_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_WalkieTalkie_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_WalkieTalkie_Display_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_WalkieTalkie_Display_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_WalkieTalkie_Display_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_WalkieTalkie_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_WalkieTalkie_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Walk_Shake_2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Walk_Shake_2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Walk_Shake_2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Walk_Shake_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Walk_Shake_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BP_Walk_Shake_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_CanMove_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_CanMove_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_CanMove_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_IsCarrying_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_IsCarrying_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_IsCarrying_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_ShouldMove_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_ShouldMove_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_ShouldMove_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_ShouldRoam_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_ShouldRoam_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTDecorator_ShouldRoam_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTService_CheckVisiblePlayers_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTService_CheckVisiblePlayers_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTService_CheckVisiblePlayers_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_PlaySound_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_PlaySound_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_PlaySound_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_RoamLocation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_RoamLocation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_RoamLocation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_Teleport_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_Teleport_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BTTask_Teleport_structs.hpp" />
+    <ClInclude Include="Replc\SDK\BuildPatchServices_classes.hpp" />
+    <ClInclude Include="Replc\SDK\BuildPatchServices_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\BuildPatchServices_structs.hpp" />
+    <ClInclude Include="Replc\SDK\CableComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\CableComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\CableComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Card_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Card_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Card_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Chainsaw_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Chainsaw_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Chainsaw_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosCloth_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosCloth_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosCloth_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosNiagara_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosNiagara_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosNiagara_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosSolverEngine_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosSolverEngine_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosSolverEngine_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosVehiclesEngine_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosVehiclesEngine_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosVehiclesEngine_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosVehicles_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosVehicles_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ChaosVehicles_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Chaos_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Chaos_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Chaos_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ChatComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ChatComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ChatComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\CinematicCamera_classes.hpp" />
+    <ClInclude Include="Replc\SDK\CinematicCamera_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\CinematicCamera_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ClimbLadderSequence_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ClimbLadderSequence_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ClimbLadderSequence_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ClimbSequence_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ClimbSequence_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ClimbSequence_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeCommon_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeCommon_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeCommon_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeInterface_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeInterface_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeInterface_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeNv_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeNv_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ClothingSystemRuntimeNv_structs.hpp" />
+    <ClInclude Include="Replc\SDK\CoreUObject_classes.hpp" />
+    <ClInclude Include="Replc\SDK\CoreUObject_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\CoreUObject_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Crowbar_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Crowbar_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Crowbar_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\CustomMeshComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\CustomMeshComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\CustomMeshComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\DatasmithContent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\DatasmithContent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\DatasmithContent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\DeveloperSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\DeveloperSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\DeveloperSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\DmgTypeBP_Environmental_classes.hpp" />
+    <ClInclude Include="Replc\SDK\DmgTypeBP_Environmental_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\DmgTypeBP_Environmental_structs.hpp" />
+    <ClInclude Include="Replc\SDK\DragonIKPlugin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\DragonIKPlugin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\DragonIKPlugin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Dyn_Foam_O_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Dyn_Foam_O_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Dyn_Foam_O_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EasyVoiceChat_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EasyVoiceChat_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EasyVoiceChat_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EditableMesh_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EditableMesh_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EditableMesh_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EIntTypes_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EIntTypes_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EIntTypes_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EModifierKeys_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EModifierKeys_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EModifierKeys_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EndCutscene_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EndCutscene_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EndCutscene_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EngineMessages_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EngineMessages_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EngineMessages_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EngineSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EngineSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EngineSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Engine_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Engine_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Engine_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Enum_SegmentDisplayType_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Enum_SegmentDisplayType_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Enum_SegmentDisplayType_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EN_ItemRarity_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EN_ItemRarity_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EN_ItemRarity_structs.hpp" />
+    <ClInclude Include="Replc\SDK\EyeTracker_classes.hpp" />
+    <ClInclude Include="Replc\SDK\EyeTracker_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\EyeTracker_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_CameraSetting_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_CameraSetting_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_CameraSetting_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_Comfirmation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_Comfirmation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_Comfirmation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_Difficulty_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_Difficulty_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_Difficulty_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_HeadsetType_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_HeadsetType_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_HeadsetType_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_Mailbox_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_Mailbox_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_Mailbox_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_MainMenu_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_MainMenu_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_MainMenu_structs.hpp" />
+    <ClInclude Include="Replc\SDK\E_TemplateGraphic_classes.hpp" />
+    <ClInclude Include="Replc\SDK\E_TemplateGraphic_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\E_TemplateGraphic_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FacialAnimation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FacialAnimation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FacialAnimation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FadeOut_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FadeOut_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FadeOut_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FieldSystemEngine_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FieldSystemEngine_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FieldSystemEngine_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Flashlight_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Flashlight_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Flashlight_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidBoundary_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidBoundary_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidBoundary_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidDynamicForceMeshType_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidDynamicForceMeshType_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidDynamicForceMeshType_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceDynamicPerInstanceData_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceDynamicPerInstanceData_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceDynamicPerInstanceData_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceDynamic_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceDynamic_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceDynamic_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulsePerInstanceData_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulsePerInstanceData_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulsePerInstanceData_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulseTimedEffects_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulseTimedEffects_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulseTimedEffects_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulse_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulse_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceImpulse_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceSocketInfo_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceSocketInfo_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidForceSocketInfo_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidSimSolverMode_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidSimSolverMode_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidSimSolverMode_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FluidTerrainModes_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FluidTerrainModes_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FluidTerrainModes_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FoliageToSpawnInArea_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FoliageToSpawnInArea_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FoliageToSpawnInArea_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FoliageToSpawn_Struct_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FoliageToSpawn_Struct_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FoliageToSpawn_Struct_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Foliage_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Foliage_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Foliage_structs.hpp" />
+    <ClInclude Include="Replc\SDK\FootstepActionsEnum_classes.hpp" />
+    <ClInclude Include="Replc\SDK\FootstepActionsEnum_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\FootstepActionsEnum_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GameEnd_UI_2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GameEnd_UI_2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GameEnd_UI_2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayCameras_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayCameras_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayCameras_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayTags_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayTags_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayTags_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayTasks_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayTasks_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GameplayTasks_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCacheTracks_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCacheTracks_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCacheTracks_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCache_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCache_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCache_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCollectionEngine_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCollectionEngine_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCollectionEngine_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCollectionTracks_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCollectionTracks_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GeometryCollectionTracks_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GM_MainMenu_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GM_MainMenu_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GM_MainMenu_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GooglePAD_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GooglePAD_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GooglePAD_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Grass2_Component_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Grass2_Component_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Grass2_Component_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GrassInteractionType_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GrassInteractionType_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GrassInteractionType_structs.hpp" />
+    <ClInclude Include="Replc\SDK\GrassSpawnArea_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\GrassSpawnArea_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\GrassSpawnArea_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Grass_Interaction_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Grass_Interaction_Other_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Grass_Interaction_Other_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Grass_Interaction_Other_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Grass_Interaction_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Grass_Interaction_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HeadMountedDisplay_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HeadMountedDisplay_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HeadMountedDisplay_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HeadShakeLanded_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HeadShakeLanded_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HeadShakeLanded_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_Fear_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_Fear_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_Fear_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtActorSeq_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtActorSeq_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtActorSeq_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtActor_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtActor_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtActor_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtLocationSeq_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtLocationSeq_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtLocationSeq_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtLocation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtLocation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_LookAtLocation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_SubtitleSeq_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_SubtitleSeq_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_SubtitleSeq_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_SubtitleSub_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_SubtitleSub_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_SubtitleSub_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HE_Subtitle_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HE_Subtitle_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HE_Subtitle_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HorrorEngineSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HorrorEngineSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HorrorEngineSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HorrorEngine_Footstep_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HorrorEngine_Footstep_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HorrorEngine_Footstep_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Hound_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Hound_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Hound_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Howler_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Howler_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Howler_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\HUD_DroppedItem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\HUD_DroppedItem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\HUD_DroppedItem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ImageWrapper_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ImageWrapper_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ImageWrapper_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ImageWriteQueue_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ImageWriteQueue_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ImageWriteQueue_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMediaEngine_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMediaEngine_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMediaEngine_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMediaFactory_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMediaFactory_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMediaFactory_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMedia_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMedia_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ImgMedia_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InGame_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InGame_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InGame_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InputCore_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InputCore_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InputCore_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InstanceData_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InstanceData_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InstanceData_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InstanceStatus_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InstanceStatus_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InstanceStatus_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveFoliageChunk_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveFoliageChunk_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveFoliageChunk_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveGrassManager_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveGrassManager_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveGrassManager_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveToolsFramework_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveToolsFramework_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InteractiveToolsFramework_structs.hpp" />
+    <ClInclude Include="Replc\SDK\INTERACTIVE_FoliageComp_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\INTERACTIVE_FoliageComp_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\INTERACTIVE_FoliageComp_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\InteractWithGrass_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\InteractWithGrass_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\InteractWithGrass_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\JsonUtilities_classes.hpp" />
+    <ClInclude Include="Replc\SDK\JsonUtilities_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\JsonUtilities_structs.hpp" />
+    <ClInclude Include="Replc\SDK\JumpFlood_Component2D_classes.hpp" />
+    <ClInclude Include="Replc\SDK\JumpFlood_Component2D_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\JumpFlood_Component2D_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Landmass_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Landmass_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Landmass_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Landscape_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Landscape_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Landscape_structs.hpp" />
+    <ClInclude Include="Replc\SDK\LevelSequence_classes.hpp" />
+    <ClInclude Include="Replc\SDK\LevelSequence_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\LevelSequence_structs.hpp" />
+    <ClInclude Include="Replc\SDK\LightPropagationVolumeRuntime_classes.hpp" />
+    <ClInclude Include="Replc\SDK\LightPropagationVolumeRuntime_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\LightPropagationVolumeRuntime_structs.hpp" />
+    <ClInclude Include="Replc\SDK\LiveLinkInterface_classes.hpp" />
+    <ClInclude Include="Replc\SDK\LiveLinkInterface_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\LiveLinkInterface_structs.hpp" />
+    <ClInclude Include="Replc\SDK\LobbyPS_classes.hpp" />
+    <ClInclude Include="Replc\SDK\LobbyPS_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\LobbyPS_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_DifficultySwitcher_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_DifficultySwitcher_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_DifficultySwitcher_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_GM_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_GM_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_GM_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_GS_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_GS_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_GS_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_HUD_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_HUD_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_HUD_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Level_Switcher_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Level_Switcher_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Level_Switcher_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_MapSelection_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_MapSelection_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_MapSelection_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Menu_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Menu_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Menu_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Name_Box_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Name_Box_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Name_Box_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerController_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerController_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerController_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerList_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerList_Item_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerList_Item_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerList_Item_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerList_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_PlayerList_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Save_Switcher_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Save_Switcher_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Lobby_Save_Switcher_structs.hpp" />
+    <ClInclude Include="Replc\SDK\LocationServicesBPLibrary_classes.hpp" />
+    <ClInclude Include="Replc\SDK\LocationServicesBPLibrary_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\LocationServicesBPLibrary_structs.hpp" />
+    <ClInclude Include="Replc\SDK\LuminRuntimeSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\LuminRuntimeSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\LuminRuntimeSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapARPinInfoActor_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapARPinInfoActor_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapARPinInfoActor_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapARPin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapARPin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapARPin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapAR_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapAR_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapAR_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapAudio_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapAudio_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapAudio_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapController_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapController_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapController_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapEyeTracker_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapEyeTracker_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapEyeTracker_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapHandMeshing_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapHandMeshing_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapHandMeshing_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapHandTracking_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapHandTracking_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapHandTracking_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapIdentity_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapIdentity_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapIdentity_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapImageTracker_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapImageTracker_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapImageTracker_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapLightEstimation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapLightEstimation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapLightEstimation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapPlanes_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapPlanes_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapPlanes_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapPrivileges_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapPrivileges_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapPrivileges_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapSecureStorage_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapSecureStorage_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapSecureStorage_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapSharedWorld_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapSharedWorld_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeapSharedWorld_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeap_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeap_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MagicLeap_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MainMenuMap_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MainMenuMap_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MainMenuMap_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MaterialShaderQualitySettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MaterialShaderQualitySettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MaterialShaderQualitySettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MediaAssets_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MediaAssets_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MediaAssets_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MediaCompositing_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MediaCompositing_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MediaCompositing_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MediaUtils_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MediaUtils_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MediaUtils_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MeshDescription_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MeshDescription_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MeshDescription_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Mesh_Switch_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Mesh_Switch_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Mesh_Switch_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MobilePatchingUtils_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MobilePatchingUtils_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MobilePatchingUtils_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MotoSynth_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MotoSynth_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MotoSynth_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MoviePlayer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MoviePlayer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MoviePlayer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MovieSceneCapture_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MovieSceneCapture_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MovieSceneCapture_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MovieSceneTracks_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MovieSceneTracks_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MovieSceneTracks_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MovieScene_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MovieScene_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MovieScene_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MP_GameMode_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MP_GameMode_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MP_GameMode_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MP_GameState_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MP_GameState_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MP_GameState_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MP_Level94_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MP_Level94_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MP_Level94_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PlayerController_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PlayerController_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PlayerController_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PoolRooms_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PoolRooms_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PoolRooms_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PS_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PS_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MP_PS_structs.hpp" />
+    <ClInclude Include="Replc\SDK\MRMesh_classes.hpp" />
+    <ClInclude Include="Replc\SDK\MRMesh_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\MRMesh_structs.hpp" />
+    <ClInclude Include="Replc\SDK\NavigationSystem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\NavigationSystem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\NavigationSystem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\NetCore_classes.hpp" />
+    <ClInclude Include="Replc\SDK\NetCore_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\NetCore_structs.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraAnimNotifies_classes.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraAnimNotifies_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraAnimNotifies_structs.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraCore_classes.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraCore_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraCore_structs.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraShader_classes.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraShader_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\NiagaraShader_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Niagara_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Niagara_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Niagara_structs.hpp" />
+    <ClInclude Include="Replc\SDK\NoClip_classes.hpp" />
+    <ClInclude Include="Replc\SDK\NoClip_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\NoClip_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Old_Instance_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Old_Instance_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Old_Instance_structs.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystemSteam_classes.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystemSteam_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystemSteam_structs.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystemUtils_classes.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystemUtils_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystemUtils_structs.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\OnlineSubsystem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\OodleNetworkHandlerComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\OodleNetworkHandlerComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\OodleNetworkHandlerComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\OpenInputPlugin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\OpenInputPlugin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\OpenInputPlugin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Overlay_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Overlay_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Overlay_structs.hpp" />
+    <ClInclude Include="Replc\SDK\PacketHandler_classes.hpp" />
+    <ClInclude Include="Replc\SDK\PacketHandler_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\PacketHandler_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Paper2D_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Paper2D_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Paper2D_structs.hpp" />
+    <ClInclude Include="Replc\SDK\PhysicsCore_classes.hpp" />
+    <ClInclude Include="Replc\SDK\PhysicsCore_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\PhysicsCore_structs.hpp" />
+    <ClInclude Include="Replc\SDK\PlayerEQSQuery_classes.hpp" />
+    <ClInclude Include="Replc\SDK\PlayerEQSQuery_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\PlayerEQSQuery_structs.hpp" />
+    <ClInclude Include="Replc\SDK\PlayerStats_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\PlayerStats_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\PlayerStats_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Player_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Player_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Player_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Player_Arms_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Player_Arms_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Player_Arms_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Player_Legs_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Player_Legs_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Player_Legs_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ProceduralMeshComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ProceduralMeshComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ProceduralMeshComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ProceduralValues_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ProceduralValues_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ProceduralValues_structs.hpp" />
+    <ClInclude Include="Replc\SDK\PropertyAccess_classes.hpp" />
+    <ClInclude Include="Replc\SDK\PropertyAccess_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\PropertyAccess_structs.hpp" />
+    <ClInclude Include="Replc\SDK\PropertyPath_classes.hpp" />
+    <ClInclude Include="Replc\SDK\PropertyPath_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\PropertyPath_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Renderer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Renderer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Renderer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\RenderToTextureFunctionLibrary_classes.hpp" />
+    <ClInclude Include="Replc\SDK\RenderToTextureFunctionLibrary_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\RenderToTextureFunctionLibrary_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Rope_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Rope_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Rope_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Scanner_BP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Scanner_BP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Scanner_BP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Scanner_Skeleton_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Scanner_Skeleton_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Scanner_Skeleton_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Scoreboard_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Scoreboard_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Scoreboard_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Serialization_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Serialization_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Serialization_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SessionMessages_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SessionMessages_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SessionMessages_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ShallowWaterSimComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ShallowWaterSimComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ShallowWaterSimComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Shocked_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Shocked_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Shocked_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SignificanceManager_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SignificanceManager_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SignificanceManager_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SimpleScatterPlugin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SimpleScatterPlugin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SimpleScatterPlugin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SlateCore_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SlateCore_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SlateCore_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Slate_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Slate_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Slate_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SmoothSyncPlugin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SmoothSyncPlugin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SmoothSyncPlugin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SoundFields_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SoundFields_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SoundFields_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Spectator_UI_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Spectator_UI_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Spectator_UI_structs.hpp" />
+    <ClInclude Include="Replc\SDK\StaticMeshDescription_classes.hpp" />
+    <ClInclude Include="Replc\SDK\StaticMeshDescription_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\StaticMeshDescription_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SteamSockets_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SteamSockets_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SteamSockets_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SteamVRInputDevice_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SteamVRInputDevice_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SteamVRInputDevice_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SteamVR_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SteamVR_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SteamVR_structs.hpp" />
+    <ClInclude Include="Replc\SDK\ST_Item_classes.hpp" />
+    <ClInclude Include="Replc\SDK\ST_Item_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\ST_Item_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SubtitleTextWB_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SubtitleTextWB_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SubtitleTextWB_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SubtitleWB_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SubtitleWB_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SubtitleWB_structs.hpp" />
+    <ClInclude Include="Replc\SDK\SunPosition_classes.hpp" />
+    <ClInclude Include="Replc\SDK\SunPosition_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\SunPosition_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Swim_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Swim_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Swim_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Synthesis_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Synthesis_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Synthesis_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_AudioSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_AudioSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_AudioSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_ChatMessage_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_ChatMessage_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_ChatMessage_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_ConnectedPlayer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_ConnectedPlayer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_ConnectedPlayer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_Difficulty_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_Difficulty_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_Difficulty_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_DroppedItem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_DroppedItem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_DroppedItem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_Gamemode_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_Gamemode_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_Gamemode_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_HubLevels_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_HubLevels_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_HubLevels_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_LevelStats_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_LevelStats_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_LevelStats_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_LoadingMessage_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_LoadingMessage_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_LoadingMessage_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_PlayerConnectionInfo_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_PlayerConnectionInfo_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_PlayerConnectionInfo_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_PlayerData_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_PlayerData_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_PlayerData_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_UI_AudioSettings_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_UI_AudioSettings_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_UI_AudioSettings_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_UploadStatus_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_UploadStatus_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_UploadStatus_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_UserProfile_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_UserProfile_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_UserProfile_structs.hpp" />
+    <ClInclude Include="Replc\SDK\S_WorldCommon_classes.hpp" />
+    <ClInclude Include="Replc\SDK\S_WorldCommon_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\S_WorldCommon_structs.hpp" />
+    <ClInclude Include="Replc\SDK\TcpMessaging_classes.hpp" />
+    <ClInclude Include="Replc\SDK\TcpMessaging_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\TcpMessaging_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Team_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Team_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Team_structs.hpp" />
+    <ClInclude Include="Replc\SDK\TemplateSequence_classes.hpp" />
+    <ClInclude Include="Replc\SDK\TemplateSequence_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\TemplateSequence_structs.hpp" />
+    <ClInclude Include="Replc\SDK\TimeManagement_classes.hpp" />
+    <ClInclude Include="Replc\SDK\TimeManagement_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\TimeManagement_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UdpMessaging_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UdpMessaging_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UdpMessaging_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Invemtory_DropItem_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Invemtory_DropItem_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Invemtory_DropItem_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_ItemToolTip_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_ItemToolTip_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_ItemToolTip_Row_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_ItemToolTip_Row_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_ItemToolTip_Row_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_ItemToolTip_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_SlotPanel_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_SlotPanel_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_SlotPanel_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_Slot_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_Slot_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_Slot_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Inventory_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Sanity_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Sanity_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UI_Sanity_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UMG_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UMG_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UMG_structs.hpp" />
+    <ClInclude Include="Replc\SDK\UObjectPlugin_classes.hpp" />
+    <ClInclude Include="Replc\SDK\UObjectPlugin_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\UObjectPlugin_structs.hpp" />
+    <ClInclude Include="Replc\SDK\VariantManagerContent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\VariantManagerContent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\VariantManagerContent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\VectorVM_classes.hpp" />
+    <ClInclude Include="Replc\SDK\VectorVM_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\VectorVM_structs.hpp" />
+    <ClInclude Include="Replc\SDK\VRArms_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\VRArms_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\VRArms_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\VRCharacter_Demo_classes.hpp" />
+    <ClInclude Include="Replc\SDK\VRCharacter_Demo_Client_classes.hpp" />
+    <ClInclude Include="Replc\SDK\VRCharacter_Demo_Client_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\VRCharacter_Demo_Client_structs.hpp" />
+    <ClInclude Include="Replc\SDK\VRCharacter_Demo_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\VRCharacter_Demo_structs.hpp" />
+    <ClInclude Include="Replc\SDK\VRPlayer_AnimBP_classes.hpp" />
+    <ClInclude Include="Replc\SDK\VRPlayer_AnimBP_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\VRPlayer_AnimBP_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WaterExit_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WaterExit_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WaterExit_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Waterline_Cameras_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Waterline_Cameras_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Waterline_Cameras_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Water_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Water_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Water_Ripple_Component_classes.hpp" />
+    <ClInclude Include="Replc\SDK\Water_Ripple_Component_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\Water_Ripple_Component_structs.hpp" />
+    <ClInclude Include="Replc\SDK\Water_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WaveFoamSimComponent_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WaveFoamSimComponent_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WaveFoamSimComponent_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WBP_Button_Basic_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WBP_Button_Basic_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WBP_Button_Basic_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WBP_Keyboard_Basic_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WBP_Keyboard_Basic_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WBP_Keyboard_Basic_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Apply_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Apply_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Apply_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_AutoSet_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_AutoSet_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_AutoSet_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Close_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Close_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Close_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Confirmation_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Confirmation_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Confirmation_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_LeaveGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_LeaveGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_LeaveGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_ResetAchievements_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_ResetAchievements_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_ResetAchievements_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_RestartGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_RestartGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_RestartGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Sidebar_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Sidebar_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Button_Sidebar_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_ChatMessage_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_ChatMessage_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_ChatMessage_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Chat_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Chat_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Chat_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_ResetAchievements_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_ResetAchievements_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_ResetAchievements_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_ResetSettings_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_ResetSettings_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_ResetSettings_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_SaveSettings_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_SaveSettings_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Confirmation_PopUp_SaveSettings_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Dropdown_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Dropdown_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Dropdown_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_FOV_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_FOV_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_FOV_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Gamma_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Gamma_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Gamma_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_KeyRemap_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_KeyRemap_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_KeyRemap_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_LoadingScreen_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_LoadingScreen_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_LoadingScreen_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Microphone_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Microphone_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Microphone_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_OptionSwitcher_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_OptionSwitcher_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_OptionSwitcher_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Sensitivity_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Sensitivity_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Sensitivity_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_SettingsItem_Text_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_SettingsItem_Text_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_SettingsItem_Text_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_SettingsPanel_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_SettingsPanel_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_SettingsPanel_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Slider_Theme2_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Slider_Theme2_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WB_Slider_Theme2_structs.hpp" />
+    <ClInclude Include="Replc\SDK\WmfMediaFactory_classes.hpp" />
+    <ClInclude Include="Replc\SDK\WmfMediaFactory_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\WmfMediaFactory_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Confirmation_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Confirmation_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Confirmation_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_CreateServer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_CreateServer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_CreateServer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_CreditsTitleName_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_CreditsTitleName_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_CreditsTitleName_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Credits_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Credits_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Credits_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Error_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Error_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Error_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Game_Button_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Game_Button_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Game_Button_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Intro_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Intro_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Intro_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_JoinServer_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_JoinServer_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_JoinServer_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Kicked_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Kicked_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Kicked_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_LoadGameButton_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_LoadGameButton_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_LoadGameButton_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_LoadingScreen_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_LoadingScreen_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_LoadingScreen_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_MainMenu_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_MainMenu_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_MainMenu_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_Map_Selection_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_Map_Selection_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_Map_Selection_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_NewGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_NewGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_NewGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_ServerButton_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_ServerButton_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_ServerButton_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_TemplateTitle_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_TemplateTitle_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_TemplateTitle_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_VHS_Filter_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_VHS_Filter_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_VHS_Filter_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPAnim_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPAnim_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPAnim_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPHUD_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPHUD_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPHUD_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPIndicator_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPIndicator_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPIndicator_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPInGame_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPInGame_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIPInGame_structs.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIP_Speaker_classes.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIP_Speaker_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\W_VOIP_Speaker_structs.hpp" />
+    <ClInclude Include="Replc\SDK\XRVisualization_classes.hpp" />
+    <ClInclude Include="Replc\SDK\XRVisualization_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\XRVisualization_structs.hpp" />
+    <ClInclude Include="Replc\SDK\XShip_classes.hpp" />
+    <ClInclude Include="Replc\SDK\XShip_parameters.hpp" />
+    <ClInclude Include="Replc\SDK\XShip_structs.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
