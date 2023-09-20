@@ -1,4 +1,4 @@
-A Unreal Engine Trainer for the Game Escape the Backrooms. 
+A Unreal Engine Trainer for the Game Escape the Backrooms. (Directx11 Only btw)
 
 (This is a Community Project) meaning add stuff to the Trainer if you like to cuz this is Github 
 
