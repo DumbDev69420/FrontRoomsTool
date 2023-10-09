@@ -59,7 +59,128 @@ typedef struct
 	DWORD G;
 	DWORD B;
 	DWORD A;
+
 }RGBA;
+
+
+struct ColorFr {
+    RGBA Color = { 0,0,0,255 };
+    int State = 0;
+};
+
+
+DWORD Delay = 0;
+
+ULONGLONG CountActive = 0;
+ULONGLONG CountBefore = 0;
+
+
+//Old Version
+
+/*
+
+
+
+int Rainbowify(ColorFr* Col) {
+
+
+    CountActive = GetTickCount64();
+
+    if (CountActive >= CountBefore) {
+        CountBefore = GetTickCount64() + Delay;
+    }
+    else
+    {
+        return 1;
+    }
+
+
+    if (Col->Color.B != 255 && Col->Color.G == 0) {
+        Col->Color.B++;
+    }
+
+    if (Col->Color.B == 255 && Col->Color.R != 0) {
+        Col->Color.R--;
+
+    }
+
+
+    if (Col->Color.B == 255 && Col->Color.G != 255 && Col->Color.R == 0) {
+        Col->Color.G++;
+
+    }
+
+
+    if (Col->Color.G == 255 && Col->Color.B != 0) {
+        Col->Color.B--;
+
+    }
+
+    if (Col->Color.B == 0 && Col->Color.R != 255) {
+        Col->Color.R++;
+
+    }
+
+    if (Col->Color.R == 255 && Col->Color.G != 0) {
+        Col->Color.G--;
+
+    }
+}
+
+*/
+
+
+
+
+int Rainbowify(RGBA* Color) {
+
+
+    CountActive = GetTickCount64();
+
+    if (CountActive >= CountBefore) {
+        CountBefore = GetTickCount64() + Delay;
+    }
+    else
+    {
+        return 1;
+    }
+
+
+    if (Color->B != 255 && Color->G == 0) {
+        Color->B++;      
+    }
+
+    if (Color->B == 255 && Color->R != 0) {
+        Color->R--;
+              
+    }
+
+
+    if (Color->B == 255 && Color->G != 255 && Color->R == 0) {
+        Color->G++;
+               
+    }
+
+
+    if (Color->G == 255 && Color->B != 0) {
+        Color->B--;
+               
+    }
+
+    if (Color->B == 0 && Color->R != 255) {
+        Color->R++;
+                
+    }
+
+    if (Color->R == 255 && Color->G != 0) {
+        Color->G--;
+                
+    }
+}
+
+
+
+
 
 typedef struct
 {
@@ -148,6 +269,8 @@ color RainbowColorChanger(){
 	return Colors;
 }
 
+
+
 std::string UserNamex = "";
 std::string UserName() {
     if (UserNamex != "") {
@@ -233,13 +356,21 @@ uintptr_t findShitByName(std::string UserName, const std::string& filename, cons
 	return 0x0; // return a null value if the "foo" object was not found
 }
 
+ColorFr ColorRainbow;
+
+
 RGBA MrWhite = { 255,255,255,255 };
+RGBA Coolor = { 53, 0, 255, 255 };
 RGBA RedColor = { 255,0,0,255 };
 RGBA CoolColor = { 53,53,255,10 };
 RGBA CoolColor1 = { 0,0,0,255 };
 RGBA CoolColor2 = { 82,255,93,255 };
 RGBA MrBlack = { 33,255,255,255 };
 RGBA GreeenishColor = { 0, 255, 107, 255 };
+
+
+
+ColorFr Colorcooler;
 
 
 
@@ -378,6 +509,80 @@ namespace imGuiDrawShit {
 
 
 	// Simple helper function to load an image into a DX11 texture with common settings
+
+
+
+
+    #include "D3DX11tex.h"
+    #pragma comment(lib, "D3DX11.lib")
+
+    bool LoadImageByMemory(unsigned char* image, size_t image_size, ID3D11ShaderResourceView** result) {
+        D3DX11_IMAGE_LOAD_INFO information;
+        ID3DX11ThreadPump* thread = nullptr;
+
+        auto hres = D3DX11CreateShaderResourceViewFromMemory(pDevice, image, image_size, &information, thread, result, 0);
+        return (hres == S_OK);
+    }
+
+
+    ImVec2 MessageBoxPos(500, 500);
+    bool ShowMessageBox = false;
+
+
+    void DrawMessageBox(int Index, const char* Text, const char* TextMain = "TextBox") {
+        ImGui::SetNextWindowSize(ImVec2(500, 280));
+        ImGui::Begin(TextMain, &ShowMessageBox, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoResize); {
+            ImGui::Text(TextMain);
+            ImGui::Separator();
+            ImGui::Spacing();
+            ImGui::Text(Text);
+            ImGui::Spacing();
+            ImGui::Spacing();
+            ImGui::Spacing();
+            ImGui::Spacing();
+            if (ImGui::Button("Show me ya Github")) {
+                ShowMessageBox = false;
+                system(R"(start https://github.com/DumbDev69420)");
+            }
+            ImGui::SameLine(0.0f, -10.0f);
+            if (ImGui::Button("Oki"))ShowMessageBox = false;
+        }
+        ImGui::End();
+    }
+
+
+
+
+    const char* Textd = "About Me";
+    float textSize = 0.5;
+
+    void DrawAboutMe() {
+
+
+
+        // Calculate the size of the button based on text length and text size
+        ImVec2 buttonSize(strlen(Textd) * 10.0 + 2, 20.0f);
+
+        // Calculate the position for the button in the lower-right corner
+        ImVec2 windowSize = ImGui::GetWindowSize();
+        ImVec2 buttonPosition(windowSize.x - buttonSize.x + 6.0f, windowSize.y - buttonSize.y);
+
+        // Create the button using ImGui::Button and set its position
+        ImVec2 CursorPosCurrent = ImGui::GetCursorPos();
+
+        ImGui::SetCursorPos(buttonPosition);
+        if (ImGui::Button(Textd, buttonSize))
+        {
+            ShowMessageBox = true;
+        }
+
+        ImGui::SetCursorPos(CursorPosCurrent);
+
+
+        if (ShowMessageBox) {
+            DrawMessageBox(0, "Hi im a Student from Germany, and i like to Create Trainers", "About me");
+        }
+    }
 	
 	
 	bool LoadTextureFromFile(const char* filename, ID3D11ShaderResourceView** out_srv, int* out_width, int* out_height)
@@ -445,6 +650,7 @@ namespace imGuiDrawShit {
 		ImGui::GetOverlayDrawList()->AddImage(my_texture, ImVec2(x, y), ImVec2(x + w, y + h));
 	}
 	//frame_00_delay-0.03s.jpg
+    const bool UseMemoryImage = true;
 	std::string Patht = "";
 	const char* Path;
 	char username[UNLEN + 1];
@@ -453,6 +659,7 @@ namespace imGuiDrawShit {
 	int Part = NULL;
 	int AnimationSpeed = 100;
 	
+#include "Graphics.h"
 	static void DrawBackGroundGif(int x, int y, int w, int h) {
 		if (ShowAnimation == true) {
 			if (iw.window_flags == ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus) {
@@ -460,58 +667,100 @@ namespace imGuiDrawShit {
 				iw2.window_flags = ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoBackground;
 			}
 			if (IniGifs == false) {
-				DWORD username_len = UNLEN + 1;
-				GetUserName((LPWSTR)username, &username_len);
-				std::string NameReal;
-				char tmp2;
-				uintptr_t startOfNameStringaddr = (uintptr_t)&username;
-				for (size_t i = 0; i < username_len - 1; i++)
-				{
-					if (i == 0) {
-						NameReal = *(char*)(startOfNameStringaddr);
-						continue;
-					}
-					NameReal = NameReal + *(char*)(startOfNameStringaddr + 0x2 * i);
-					continue;
-				}
-				Patht = "C:\\Users\\";
-				Patht = Patht + NameReal + "\\Desktop\\Data\\Animation\\ffffff-ezgif-4-0b5934b623-gif-jpg\\frame_";
-				Path = NULL;
-                std::ifstream File;
-				for (size_t i = 0; i < 37; i++)
-				{
-					Patht = "C:\\Users\\" + NameReal;
-					Patht = Patht + "\\Desktop\\Data\\Animation\\ffffff-ezgif-4-0b5934b623-gif-jpg\\frame_";
-					Path = NULL;
-					if (i == 0) {
-						Patht = Patht + "00" + "_delay-0.03s.jpg";
-						Path = Patht.c_str();
-                        File.open(Path);
-                        if (!File.is_open()) {
-                            ShowAnimation = false;
-                            std::cout << "Couldnt find Animation stuff damn\n";
-                            return;
+                if (UseMemoryImage) {
+                    LoadImageByMemory(rawData0, sizeof(rawData0), &packedGif[0].a1);
+                    LoadImageByMemory(rawData1, sizeof(rawData1), &packedGif[1].a1);
+                    LoadImageByMemory(rawData2, sizeof(rawData2), &packedGif[2].a1);
+                    LoadImageByMemory(rawData3, sizeof(rawData3), &packedGif[3].a1);
+                    LoadImageByMemory(rawData4, sizeof(rawData4), &packedGif[4].a1);
+                    LoadImageByMemory(rawData5, sizeof(rawData5), &packedGif[5].a1);
+                    LoadImageByMemory(rawData6, sizeof(rawData6), &packedGif[6].a1);
+                    LoadImageByMemory(rawData7, sizeof(rawData7), &packedGif[7].a1);
+                    LoadImageByMemory(rawData8, sizeof(rawData8), &packedGif[8].a1);
+                    LoadImageByMemory(rawData9, sizeof(rawData9), &packedGif[9].a1);
+                    LoadImageByMemory(rawData10, sizeof(rawData10), &packedGif[10].a1);
+                    LoadImageByMemory(rawData11, sizeof(rawData11), &packedGif[11].a1);
+                    LoadImageByMemory(rawData12, sizeof(rawData12), &packedGif[12].a1);
+                    LoadImageByMemory(rawData13, sizeof(rawData13), &packedGif[13].a1);
+                    LoadImageByMemory(rawData14, sizeof(rawData14), &packedGif[14].a1);
+                    LoadImageByMemory(rawData15, sizeof(rawData15), &packedGif[15].a1);
+                    LoadImageByMemory(rawData16, sizeof(rawData16), &packedGif[16].a1);
+                    LoadImageByMemory(rawData17, sizeof(rawData17), &packedGif[17].a1);
+                    LoadImageByMemory(rawData18, sizeof(rawData18), &packedGif[18].a1);
+                    LoadImageByMemory(rawData19, sizeof(rawData19), &packedGif[19].a1);
+                    LoadImageByMemory(rawData20, sizeof(rawData20), &packedGif[20].a1);
+                    LoadImageByMemory(rawData21, sizeof(rawData21), &packedGif[21].a1);
+                    LoadImageByMemory(rawData22, sizeof(rawData22), &packedGif[22].a1);
+                    LoadImageByMemory(rawData23, sizeof(rawData23), &packedGif[23].a1);
+                    LoadImageByMemory(rawData24, sizeof(rawData24), &packedGif[24].a1);
+                    LoadImageByMemory(rawData25, sizeof(rawData25), &packedGif[25].a1);
+                    LoadImageByMemory(rawData26, sizeof(rawData26), &packedGif[26].a1);
+                    LoadImageByMemory(rawData27, sizeof(rawData27), &packedGif[27].a1);
+                    LoadImageByMemory(rawData28, sizeof(rawData28), &packedGif[28].a1);
+                    LoadImageByMemory(rawData29, sizeof(rawData29), &packedGif[29].a1);
+                    LoadImageByMemory(rawData30, sizeof(rawData30), &packedGif[30].a1);
+                    LoadImageByMemory(rawData31, sizeof(rawData31), &packedGif[31].a1);
+                    LoadImageByMemory(rawData32, sizeof(rawData32), &packedGif[32].a1);
+                    LoadImageByMemory(rawData33, sizeof(rawData33), &packedGif[33].a1);
+                    LoadImageByMemory(rawData34, sizeof(rawData34), &packedGif[34].a1);
+                    LoadImageByMemory(rawData35, sizeof(rawData35), &packedGif[35].a1);
+                    IniGifs = true;
+                }
+                else
+                {
+                    DWORD username_len = UNLEN + 1;
+                    GetUserName((LPWSTR)username, &username_len);
+                    std::string NameReal;
+                    char tmp2;
+                    uintptr_t startOfNameStringaddr = (uintptr_t)&username;
+                    for (size_t i = 0; i < username_len - 1; i++)
+                    {
+                        if (i == 0) {
+                            NameReal = *(char*)(startOfNameStringaddr);
+                            continue;
                         }
-						LoadTextureFromFile(Path, &packedGif[i].a1, &my_image_width, &my_image_height);
-						continue;
-					}
+                        NameReal = NameReal + *(char*)(startOfNameStringaddr + 0x2 * i);
+                        continue;
+                    }
+                    Patht = "C:\\Users\\";
+                    Patht = Patht + NameReal + "\\Desktop\\Data\\Animation\\ffffff-ezgif-4-0b5934b623-gif-jpg\\frame_";
+                    Path = NULL;
+                    std::ifstream File;
+                    for (size_t i = 0; i < 37; i++)
+                    {
+                        Patht = "C:\\Users\\" + NameReal;
+                        Patht = Patht + "\\Desktop\\Data\\Animation\\ffffff-ezgif-4-0b5934b623-gif-jpg\\frame_";
+                        Path = NULL;
+                        if (i == 0) {
+                            Patht = Patht + "00" + "_delay-0.03s.jpg";
+                            Path = Patht.c_str();
+                            File.open(Path);
+                            if (!File.is_open()) {
+                                ShowAnimation = false;
+                                std::cout << "Couldnt find Animation stuff damn\n";
+                                return;
+                            }
+                            LoadTextureFromFile(Path, &packedGif[i].a1, &my_image_width, &my_image_height);
+                            continue;
+                        }
 
-					if (i >= 10) {
-						Patht = Patht + std::to_string(i) + "_delay-0.03s.jpg";
-						Path = Patht.c_str();
-						LoadTextureFromFile(Path, &packedGif[i].a1, &my_image_width, &my_image_height);
-						continue;
-					}
-					else
-					{
-						Patht = Patht + "0" + std::to_string(i) + "_delay-0.03s.jpg";
-						Path = Patht.c_str();
-						LoadTextureFromFile(Path, &packedGif[i].a1, &my_image_width, &my_image_height);
-						continue;
-					}
-				}
-				Frames = 0;
-				IniGifs = true;
+                        if (i >= 10) {
+                            Patht = Patht + std::to_string(i) + "_delay-0.03s.jpg";
+                            Path = Patht.c_str();
+                            LoadTextureFromFile(Path, &packedGif[i].a1, &my_image_width, &my_image_height);
+                            continue;
+                        }
+                        else
+                        {
+                            Patht = Patht + "0" + std::to_string(i) + "_delay-0.03s.jpg";
+                            Path = Patht.c_str();
+                            LoadTextureFromFile(Path, &packedGif[i].a1, &my_image_width, &my_image_height);
+                            continue;
+                        }
+                    }
+                    Frames = 0;
+                    IniGifs = true;
+                }
 			}
 			else
 			{
@@ -1373,6 +1622,7 @@ namespace Cheat {
 
 
 
+
     std::string overflow0;
     std::string overflow1;
     std::string overflow2;
@@ -1389,12 +1639,27 @@ namespace Cheat {
     int OverflowingParts = 0;
     bool part1 = false;
     bool Start = false;
+    bool ShouldChangeColor = false;
     bool Debuga;
     RECT Dawg;
+    RGBA OverwriteColor = { 53,53,255,colorfa };
     int Size2;
 
+    bool* CurrentBool = 0x0;
     //Duration in ms
-    void NotifyBox(BYTE Flag, std::string Dawg2, int Duration, bool* Tmp) {
+    bool NotifyBox(BYTE Flag, std::string Dawg2, int Duration, bool* Tmp) {
+        Duration /= 2;
+
+        if (CurrentBool != 0x0) {
+            if (CurrentBool != Tmp) {
+                return false;
+            }
+        }
+        else
+        {
+            CurrentBool = Tmp;
+            ShouldChangeColor = false;
+        }
         if (inif == false) {
             int Characters = strlen(Dawg2.c_str());
             if (Characters > 56) {
@@ -1436,8 +1701,11 @@ namespace Cheat {
             inif = true;
             res = Dawg.bottom - 200;
             height2 = Dawg.bottom;
+
             if (Flag == 0) {
-                CoolColor = { 53,53,255,colorfa };
+
+                OverwriteColor.A = colorfa;
+                CoolColor = OverwriteColor;
             }
             else
             {
@@ -1487,7 +1755,8 @@ namespace Cheat {
             if (part1 == false) {
                 if (height2 >= res) {
                     if (Flag == 0) {
-                        CoolColor = { 53,53,255,colorfa };
+                        OverwriteColor.A = colorfa;
+                        CoolColor = OverwriteColor;
                     }
                     else
                     {
@@ -1511,7 +1780,8 @@ namespace Cheat {
                 if (TickcC1 >= Tickcb1) {
                     if (height2 <= res) {
                         if (Flag == 0) {
-                            CoolColor = { 53,53,255,colorfa };
+                            OverwriteColor.A = colorfa;
+                            CoolColor = OverwriteColor;
                         }
                         else
                         {
@@ -1526,17 +1796,23 @@ namespace Cheat {
                         colorfa = 0;
                         part1 = false;
                         inif = false;
+                        ShouldChangeColor = true;
                         *Tmp = false;
+                        CurrentBool = 0x0;
                         overflow0 = "";
                         overflow1 = "";
                         overflow2 = "";
                         overflow3 = "";
                         OverflowingParts = 0;
+                        CoolColor = { 53,53,255,colorfa };
+                        return true;
                     }
                 }
             }
         }
+        return false;
     }
+
 
 
 
@@ -1565,6 +1841,7 @@ namespace Cheat {
     bool IniCheat = false;
     bool GetVals = false;
     bool ShowCheat = true;
+    bool StopDaCheat = false;
     bool Cheatclosed = false;
     bool LightSkin = false;
     bool LightSkinini = false;
@@ -1698,18 +1975,24 @@ namespace Cheat {
         bool UnDoActor = false;
         bool ActionCall = false;
         bool ActorTpTO = false;
+        bool ActorBringTo = false;
         bool isFlyHackEnabled = false;
+        bool FlyHack = false;
         bool PickUpItem = false;
+        std::string Collision = "Collision unknown";
         bool GetItemList = false;
+        bool WaterMark = true;
         bool WasFlying = false;
         bool SuperFlashlight = false;
         bool Box = false;
         bool MainStuff = false;
+        std::string CurrentLevelName = "NONE";
         std::string FilterFr = "NONE";
         std::string Filter = "NONE";
         std::string ItemName = "";
         int DupeItem = 0;
         float TickPlayer = 0.0f;
+        float FlyHigh = 5.0f;
         float SpeedBf = 0.0f;
     };
     CheatOptions Cheato;
@@ -2047,13 +2330,11 @@ namespace Cheat {
         //ReadMemSafe64((GameHandle + ), ShitNeeded1.Engine);
         ReadMemSafe64((GameHandle + Offsets::GNames), ShitNeeded1.FName);
 
-
-
-
-
-
 		DefineHooks();
+
+        std::cout << "Look at the Console when turning stuff on since there will be standing controls in the Console when turning stuff on\n";
 	}
+
 
 
 
@@ -2226,6 +2507,22 @@ void ItemListPick() {
 }
 
 
+template<typename TF>
+void EmptyArray(TF *Arrayptr) {
+
+    SDK::TArray<uintptr_t> Array;
+
+    if (!ReadMemSafe64((uintptr_t)Arrayptr, Array))return;
+
+    for (size_t i = 0; i < Array.Num(); i++)
+    {
+        Array[i] = 0x0;
+    }
+}
+
+
+
+
 SDK::TArray<SDK::AActor*> Items_Down;
 SDK::TArray<SDK::AActor*> Enemies_There;
 SDK::TArray<SDK::AActor*> Flashlights;
@@ -2284,12 +2581,7 @@ namespace HookeFunctions {
 
 
 
-    
-
-
 }
-
-
 
    void DefineHooks() {
 
@@ -2321,8 +2613,11 @@ namespace HookeFunctions {
     // MH_EnableHook(reinterpret_cast<LPVOID*>(HookeFunctions::ABPCharacter_Demo_CPlayJumpScareTarget));
 
 
+    
 
      std::cout << "Project shit to shit: " << std::hex << ShitNeeded1.GPStatics->Class->GetFunction("GameplayStatics", "ProjectWorldToScreen")->ExecFunction << "\n";
+     
+     //std::cout << "OpenLevel shit: " << std::hex << ShitNeeded1.GPStatics->Class->GetFunction("GameplayStatics", "OpenLevel")->ExecFunction << "\n";
 
      std::cout << "Hooked all Functions\n";
 
@@ -2389,7 +2684,12 @@ uintptr_t Levelbefore = 0x0;
             if (ShouldUsePointer64((uintptr_t)ShitNeeded1.Engine)) {
                 GameViewPortShit = ShitNeeded1.Engine->GameViewport;
 
-                
+                Cheato.InGame = false;
+                if (GameViewPortShit->World != nullptr) {
+                    Cheat::Cheato.CurrentLevelName = ShitNeeded1.GPStatics->GetCurrentLevelName(GameViewPortShit->World, true).ToString();
+                }
+
+
                 LocalPlayerPos = { 0,0,0 };
 
                 if ((uintptr_t)GameViewPortShit->GameInstance != 0x0) {
@@ -2411,10 +2711,6 @@ uintptr_t Levelbefore = 0x0;
                                 LocalPlayerPos = GameViewPortShit->GameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->RootComponent->RelativeLocation;
                             }
                         }
-                        else
-                        {
-                            Cheato.InGame = false;
-                        }
                     }
                 }
             }
@@ -2431,6 +2727,17 @@ uintptr_t Levelbefore = 0x0;
                 SDK::ACharacter* Character1 = GameViewPortShit->GameInstance->LocalPlayers[0]->PlayerController->Character;
                 ShitNeeded1.PlayerController = GameViewPortShit->GameInstance->LocalPlayers[0]->PlayerController;
                 if (Character1 != 0x0) {
+
+                    Cheato.Collision = "[*] Collision ";
+                    if (Character1->GetActorEnableCollision()) {
+                        Cheato.Collision += "On";
+                    }
+                    else
+                    {
+                        Cheato.Collision += "Off";
+                    }
+                    
+
 
                     SDK::APlayerState* ppstate = Character1->PlayerState;
 
@@ -2592,7 +2899,8 @@ uintptr_t Levelbefore = 0x0;
 }
 
 
-
+RGBA BoxColor = RedColor;
+RGBA TextColor = MrWhite;
 
 void DrawBoxOnActor(SDK::AActor* Actor, const char* Name) {
 
@@ -2612,14 +2920,14 @@ void DrawBoxOnActor(SDK::AActor* Actor, const char* Name) {
     Cheat::ShitNeeded1.GPStatics->ProjectWorldToScreen(Cheat::ShitNeeded1.PlayerController, HeadLocation, &HeadScreen, true);
     Cheat::ShitNeeded1.GPStatics->ProjectWorldToScreen(Cheat::ShitNeeded1.PlayerController, FootLocation, &FootScreen, true);
 
-    const float hight = abs(HeadScreen.Y - FootScreen.Y);
+    const float height = abs(HeadScreen.Y - FootScreen.Y);
 
-    const float widht = hight * 0.6f;
+    const float width = height * 0.6f;
 
 
 
-    imGuiDrawShit::DrawRect(HeadScreen.X - widht / 2, HeadScreen.Y, widht, hight, &RedColor, 2.0f);
-    imGuiDrawShit::DrawNewText(HeadScreen.X, HeadScreen.Y + 15, &MrWhite, Name);
+    imGuiDrawShit::DrawRect(HeadScreen.X - width / 2, HeadScreen.Y, width, height, &BoxColor, 2.0f);
+    imGuiDrawShit::DrawNewText(HeadScreen.X, HeadScreen.Y + 15, &TextColor, Name);
 }
 
 
@@ -2689,6 +2997,21 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 				if (Cheat::Start == true) {
 					Cheat::NotifyBox(0, "Successfully Injected                                      Press insert to Open Menu", 8000, &Cheat::Start);
 				}
+
+                if (GetAsyncKeyState(VK_DELETE) & 1)Cheat::StopDaCheat = true;
+
+                if (Cheat::StopDaCheat) {
+                    
+
+                    if (Cheat::ShouldChangeColor)Cheat::OverwriteColor = RedColor;
+
+                    if (Cheat::NotifyBox(0, "Unhooking stuff and cleaning up", 4000, &Cheat::Cheatclosed)) {
+                        Active = false;
+                        Cheat::Cheatclosed = true;
+                    }
+                }
+
+
 				if (Spotify::SpotifyTb == true) {
 					Cheat::NotifyBox(1, "Now Playing: " + Spotify::SongFirst, 1000, &Spotify::SpotifyTb);
 				}
@@ -2699,7 +3022,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                
 
 
-
+               
 
 
 
@@ -2711,28 +3034,47 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                 {
                    
 
-
+                    
                                             
 
                                             if (Cheat::Cheato.isFlyHackEnabled) {
+
+
+                                                // Checks if the 'F' key is pressed if so turn shit on
+
+                                                if (GetAsyncKeyState('G') & 1) {
+                                                    Cheat::Cheato.FlyHack = !Cheat::Cheato.FlyHack;
+
+                                                    if (!Cheat::Cheato.FlyHack) {
+                                                        SDK::APawn* Pawnf = Cheat::ShitNeeded1.PlayerController->K2_GetPawn();
+                                                        if (Pawnf != nullptr) {
+                                                          Pawnf->SetActorEnableCollision(true);
+                                                          Cheat::ShitNeeded1.PlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Falling;
+                                                        }
+                                                    }
+                                                }
+
+
                                                 // Check if the player controller and pawn are valid
-                                                if (Cheat::ShitNeeded1.PlayerController && Cheat::ShitNeeded1.PlayerController->K2_GetPawn()) {
+                                                if (Cheat::Cheato.FlyHack == true && Cheat::ShitNeeded1.PlayerController && Cheat::ShitNeeded1.PlayerController->Class && Cheat::ShitNeeded1.PlayerController->K2_GetPawn() != nullptr && Cheat::ShitNeeded1.PlayerController->Character != nullptr && Cheat::ShitNeeded1.PlayerController->Character->CharacterMovement != nullptr) {
+                                                    SDK::APawn* Pawnf = Cheat::ShitNeeded1.PlayerController->K2_GetPawn();
+
+
+
                                                     Cheat::Cheato.WasFlying = true;
                                                     Cheat::ShitNeeded1.PlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
-                                                    SDK::FVector ForwardPos = Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->GetActorForwardVector();
+                                                    SDK::FVector ForwardPos = Pawnf->GetActorForwardVector();
                                                     float MovementStep = 10.2f;
 
 
 
                                                     if (GetAsyncKeyState(VK_TAB) & 1) {
-                                                        if (Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->GetActorEnableCollision()) {
-                                                            std::cout << "[*] Turned Collision off\n";
-                                                            Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->SetActorEnableCollision(false);
+                                                        if (Pawnf->GetActorEnableCollision()) {
+                                                            Pawnf->SetActorEnableCollision(false);
                                                         }
                                                         else
                                                         {
-                                                            std::cout << "[*] Turned Collision om\n";
-                                                            Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->SetActorEnableCollision(true);
+                                                            Pawnf->SetActorEnableCollision(true);
                                                         }
                                                     }
 
@@ -2743,27 +3085,32 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                                         
                                                         
 
-                                                        SDK::FVector NewLocation = Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_GetActorLocation() + ForwardPos * MovementStep;
+                                                        SDK::FVector NewLocation = Pawnf->K2_GetActorLocation() + ForwardPos * MovementStep;
 
 
-                                                        Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_SetActorLocation(NewLocation, false, 0, true);
+                                                        Pawnf->K2_SetActorLocation(NewLocation, false, 0, true);
                                                     }
 
 
 
+                                                    
+
+
+                                                    
+
 
                                                     if (GetAsyncKeyState(VK_SPACE)) {
-                                                        SDK::FVector NewLocation = Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_GetActorLocation();
-                                                        NewLocation.Z += 5.0f;
-                                                        Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_SetActorLocation(NewLocation, false, 0, true);
+                                                        SDK::FVector NewLocation = Pawnf->K2_GetActorLocation();
+                                                        NewLocation.Z += Cheat::Cheato.FlyHigh;
+                                                        Pawnf->K2_SetActorLocation(NewLocation, false, 0, true);
 
                                                     }
 
 
                                                     if (GetAsyncKeyState(VK_SHIFT)) {
-                                                        SDK::FVector NewLocation = Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_GetActorLocation();
-                                                        NewLocation.Z -= 5.0f;
-                                                        Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_SetActorLocation(NewLocation, false, 0, true);
+                                                        SDK::FVector NewLocation = Pawnf->K2_GetActorLocation();
+                                                        NewLocation.Z -= Cheat::Cheato.FlyHigh;
+                                                        Pawnf->K2_SetActorLocation(NewLocation, false, 0, true);
                                                     }
                                                 }
                                             }
@@ -2771,7 +3118,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                             {
                                                 if (Cheat::Cheato.WasFlying) {
                                                     Cheat::Cheato.WasFlying = false;
-                                                    if (!Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->GetActorEnableCollision())Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->SetActorEnableCollision(true);
+                                                    if (Cheat::ShitNeeded1.PlayerController->K2_GetPawn() != nullptr && !Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->GetActorEnableCollision()) {
+                                                        Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->SetActorEnableCollision(true);
+                                                    }
                                                     Cheat::ShitNeeded1.PlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Falling;
                                                 }
                                             }
@@ -2889,7 +3238,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                                         {
                                                             SDK::ABP_DroppedItem_C* CurrentActor = (SDK::ABP_DroppedItem_C*)Cheat::Items_Down[i];
                                                             //CurrentActor->Children
-                                                            if (!Cheat::ShouldUsePointer64((uintptr_t)CurrentActor) || !Cheat::ShouldUsePointer64((uintptr_t)CurrentActor->Class) || !Cheat::ShouldUsePointer64((uintptr_t)CurrentActor->Vft) || !Cheat::ShouldUsePointer64((uintptr_t)&CurrentActor->ID)) {
+                                                            if (!Cheat::ShouldUsePointer64((uintptr_t)CurrentActor) || !Cheat::ShouldUsePointer64((uintptr_t)CurrentActor->Class) || !Cheat::ShouldUsePointer64((uintptr_t)CurrentActor->Vft) || !Cheat::ShouldUsePointer64((uintptr_t)&CurrentActor->Class->DefaultObject)) {
                                                                 break;
                                                             }
                                                             SDK::FVector WorldPos;
@@ -2989,7 +3338,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                             }
 
 
-
+                                            
 
 
 
@@ -3017,7 +3366,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                                                 SDK::FVector WorldPos;
                                                                if (Cheat::ShouldUsePointer64((uintptr_t)CurrentActor) && CurrentActor->Outer != nullptr) {// && Cheat::ShouldUsePointer64((uintptr_t)CurrentActor->Vft)) {
 
-
+                                                                   if (CurrentActor->Name.ComparisonIndex <= 0)break;
                                                                     std::string NameActor = CurrentActor->Name.ToString();
                                                                     if (NameActor.find(Cheat::Cheato.Filter.c_str()) == std::string::npos)continue;
 
@@ -3039,6 +3388,12 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                                                                 if (Cheat::Cheato.ActorTpTO) {
                                                                                     Cheat::Cheato.ActorTpTO = false;
                                                                                     Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_SetActorLocation(WorldPos, false, 0, true);
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    if (Cheat::Cheato.ActorBringTo) {
+                                                                                        CurrentActor->K2_SetActorLocation(Cheat::ShitNeeded1.PlayerController->K2_GetPawn()->K2_GetActorLocation(), false, 0, true);
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }
@@ -3075,15 +3430,25 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
                 }
 
+                
+
+                if (Cheat::Cheato.WaterMark) {
+                    if (Rainbowify(&Colorcooler.Color) == 0);
+
+                    Cheat::Tempd215 = "Made by Senpai42";
+                    int lf = Cheat::Tempd215.size() * 10;
+                    Cheat::TempBus213 = Cheat::Tempd215.data();
+                    imGuiDrawShit::DrawInSideText(Cheat::Dawg.right - lf, Cheat::height24, &Colorcooler.Color, Cheat::TempBus213);
+                }
+
+
+
 
 
 				if (Cheat::Rendershit::ShowRenderStuff == true) {
 
 
                     //TestHit
-
-                    
-                    
                     
 
 					Cheat::Tempd215 = "Made by Senpai42";
@@ -3093,11 +3458,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 					Cheat::Tempd215 = Cheat::Timea;
 					Cheat::TempBus213 = Cheat::Tempd215.data();
 					imGuiDrawShit::DrawInSideText(Cheat::windowWidth /2, 100, &MrWhite, Cheat::TempBus213);
-
-					Cheat::Tempd215 = "Test Dropdown: ";
-					Cheat::TempBus213 = Cheat::Tempd215.data();
-					imGuiDrawShit::DrawInSideText(80, Cheat::height24 + 150 + 15 * Cheat::Size2, &MrWhite, Cheat::TempBus213);
-					Cheat::Size2 = Cheat::Size2 + 1;
 
 					Cheat::Tempd215 = "Song Playing: " + Spotify::SongFirst ;
 					Cheat::TempBus213 = Cheat::Tempd215.data();
@@ -3109,6 +3469,10 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                     imGuiDrawShit::DrawInSideText(80, Cheat::height24 + 150 + 15 * Cheat::Size2, &MrWhite, Cheat::TempBus213);
                     Cheat::Size2 = Cheat::Size2 + 1;
 
+                    Cheat::Tempd215 = Cheat::Cheato.Collision;
+                    Cheat::TempBus213 = Cheat::Tempd215.data();
+                    imGuiDrawShit::DrawInSideText(80, Cheat::height24 + 150 + 15 * Cheat::Size2, &MrWhite, Cheat::TempBus213);
+                    Cheat::Size2 = Cheat::Size2 + 1;
 
                     
 					Cheat::Tempd215 = "Pos x,y,z: " + Cheat::ImportantShit::Vector3DToString(Cheat::ImportantShit::LocalPlayerPos.X, Cheat::ImportantShit::LocalPlayerPos.Y, Cheat::ImportantShit::LocalPlayerPos.Z);
@@ -3123,7 +3487,10 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                     Cheat::Size2 = Cheat::Size2 + 1;
 
                    
-                    
+                    Cheat::Tempd215 = "Current Level: " + Cheat::Cheato.CurrentLevelName;
+                    Cheat::TempBus213 = Cheat::Tempd215.data();
+                    imGuiDrawShit::DrawInSideText(80, Cheat::height24 + 150 + 15 * Cheat::Size2, &MrWhite, Cheat::TempBus213);
+                    Cheat::Size2 = Cheat::Size2 + 1;
 
 
 				}
@@ -3137,6 +3504,37 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 				Cheat::p.y = Cheat::p.y + Cheat::HeightofMouse;
 				if (Cheat::Tabs != 0) {
 					imGuiDrawShit::DrawCircle((int)Cheat::p.x, (int)Cheat::p.y, 5.0f, &MrWhite, 12);
+
+                    ImGui::SetNextWindowSize(iw.window_size);
+                    ImGui::Begin(iw.window_title, &Active, iw.window_flags);
+                    {
+                        iw.WindowPos = ImGui::GetWindowPos();
+                        imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
+                        if (ImGui::Button("Home page") == true) {
+                            Cheat::Tabs = 1;
+                        }
+                        ImGui::SameLine();
+                        if (ImGui::Button("Misc page") == true) {
+                            Cheat::Tabs = 2;
+                        }
+                        ImGui::SameLine();
+                        if (ImGui::Button("Settings page") == true) {
+                            Cheat::Tabs = 3;
+                        }
+                        ImGui::SameLine();
+                        if (ImGui::Button("Performance page") == true) {
+                            Cheat::Tabs = 4;
+                        }
+                        ImGui::SameLine();
+                        if (ImGui::Button("Aimbot and shit") == true) {
+                            Cheat::Tabs = 5;
+                        }
+                        if (ImGui::Button("Spotify Shit (Not working)") == true) { // Spotify switched 2 to 3 months ago to 64bit and im to lazy to get the new code i wrote from another project and paste it here :)
+                            Cheat::Tabs = 6;
+                        }
+                        ImGui::Separator();
+                        imGuiDrawShit::DrawAboutMe();
+                    }
 				}
 				if (GetAsyncKeyState(VK_F3) & 1) {
 					Cheat::p.y = Cheat::p.y + Cheat::HeightofMouse;
@@ -3145,35 +3543,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 				//imGuiDrawShit::DrawFilledRect(0, Cheat::Dawg.bottom - 150,400, 200, &CoolColor);
 				switch (Cheat::Tabs) {
 				case 1:
-					ImGui::SetNextWindowSize(iw.window_size);
-					ImGui::Begin(iw.window_title, &Active, iw.window_flags);
-					{
-						iw.WindowPos = ImGui::GetWindowPos();
-						imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
-						if (ImGui::Button("Home page") == true) {
-							Cheat::Tabs = 1;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Misc page") == true) {
-							Cheat::Tabs = 2;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Settings page") == true) {
-							Cheat::Tabs = 3;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Performance page") == true) {
-							Cheat::Tabs = 4;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Aimbot and shit") == true) {
-							Cheat::Tabs = 5;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Spotify Shit") == true) {
-							Cheat::Tabs = 6;
-						}
-						ImGui::Separator();
 						ImGui::Spacing();
 						ImGui::Checkbox("Debug Stuff", &Cheat::Rendershit::ShowRenderStuff);
 						ImGui::Spacing();
@@ -3181,7 +3550,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                         ImGui::Spacing();
                         ImGui::Checkbox("inf Sanity", &Cheat::Cheato.InfSanity);
                         ImGui::Spacing();
-                        ImGui::Checkbox("FlyHack", &Cheat::Cheato.isFlyHackEnabled);
+                        if (ImGui::Checkbox("FlyHack (Main has to be on)", &Cheat::Cheato.isFlyHackEnabled)) {
+                            if (Cheat::Cheato.isFlyHackEnabled)std::cout << "[*] Flyhack on!\n Control: G = Turn on/off Flyhack, W = Forward, Space = Up, Shift = Down, Shift = Noclip on/off (Quick info: Collision resets when a new level is loaded)\n";
+                        }
                         ImGui::Spacing();
                         ImGui::Checkbox("Super Flashlights", &Cheat::Cheato.SuperFlashlight);
                         ImGui::Spacing();
@@ -3197,40 +3568,15 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                         ImGui::Spacing();
                         ImGui::InputText("Item Name:", (char*)Cheat::Cheato.ItemName.c_str(), sizeof(Cheat::Cheato.ItemName));
                         ImGui::Spacing();
-					}
+                        if (Cheat::Cheato.isFlyHackEnabled) {
+                            ImGui::SliderFloat("Fly hight", &Cheat::Cheato.FlyHigh, 0.01f, 10000.0f);
+                            ImGui::Spacing();
+                        }
+
 
 						break;
 				case 2:
-					ImGui::SetNextWindowSize(iw.window_size);
-					ImGui::Begin(iw.window_title, &Active, iw.window_flags);
-					{
-						iw.WindowPos = ImGui::GetWindowPos();
-						imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
-						if (ImGui::Button("Home page") == true) {
-							Cheat::Tabs = 1;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Misc page") == true) {
-							Cheat::Tabs = 2;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Settings page") == true) {
-							Cheat::Tabs = 3;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Performance page") == true) {
-							Cheat::Tabs = 4;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Aimbot and shit") == true) {
-							Cheat::Tabs = 5;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Spotify Shit") == true) {
-							Cheat::Tabs = 6;
-						}
-						ImGui::Separator();
-                        ImGui::Checkbox("Activate Esp", &Cheat::Cheato.MainStuff);
+                        ImGui::Checkbox("Activate Main (for Esp and Flyhack)", &Cheat::Cheato.MainStuff);
                         ImGui::Spacing();
                         ImGui::Checkbox("Item Esp", &Cheat::Cheato.RenderItemLocations);
                         ImGui::Spacing();
@@ -3258,153 +3604,46 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
                                 Cheat::Cheato.ActorTpTO = true;
                                 Cheat::Cheato.ActionCall = true;
                             }
+                            if (ImGui::SmallButton("Bring Actors")) {
+                                Cheat::Cheato.ActorBringTo = true;
+                                Cheat::Cheato.ActionCall = true;
+                            }
                         }
 
-					}
+					
 					break;
 
 				case 3:
-					ImGui::SetNextWindowSize(iw.window_size);
-					ImGui::Begin(iw.window_title, &Active, iw.window_flags);
-					{
-						iw.WindowPos = ImGui::GetWindowPos();
-						imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
-
-						if (ImGui::Button("Home page") == true) {
-							Cheat::Tabs = 1;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Misc page") == true) {
-							Cheat::Tabs = 2;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Settings page") == true) {
-							Cheat::Tabs = 3;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Performance page") == true) {
-							Cheat::Tabs = 4;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Aimbot and shit") == true) {
-							Cheat::Tabs = 5;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Spotify Shit") == true) {
-							Cheat::Tabs = 6;
-						}
-						ImGui::Separator();
+                
 						ImGui::SliderInt("Hight of Mouse Circle", &Cheat::HeightofMouse, -200, 2000, 0);
 						ImGui::Spacing();
 						ImGui::Checkbox("LightSkin?", &Cheat::LightSkin); //ShowAnimation
 						ImGui::Spacing();
-						ImGui::Checkbox("Animation (Will fix this later, for now dont press)", &imGuiDrawShit::ShowAnimation);
+                        ImGui::Checkbox("Watermark", &Cheat::Cheato.WaterMark);
+                        ImGui::Spacing();
+						ImGui::Checkbox("Animation", &imGuiDrawShit::ShowAnimation);
 						ImGui::Spacing();
-					}
+					
 					break;
 
 				case 4:
-					ImGui::Begin(iw.window_title, &Active, iw.window_flags);
-					{
-						iw.WindowPos = ImGui::GetWindowPos();
-						imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
-						if (ImGui::Button("Home page") == true) {
-							Cheat::Tabs = 1;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Misc page") == true) {
-							Cheat::Tabs = 2;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Settings page") == true) {
-							Cheat::Tabs = 3;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Performance page") == true) {
-							Cheat::Tabs = 4;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Aimbot and shit") == true) {
-							Cheat::Tabs = 5;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Spotify Shit") == true) {
-							Cheat::Tabs = 6;
-						}
-						ImGui::Separator();
+
 						ImGui::SliderInt("Times Functions Called ( in ms )", &Cheat::TimeFunctionsCalled, 1, 2000, 0);
                         ImGui::Spacing();
 						if (ImGui::Button("Test Spotify msg box") == true) {
 							Spotify::SpotifyTb = true;
 						}
 						ImGui::Spacing();
-					}
+					
 					break;
 
 				case 5:
-					ImGui::Begin(iw.window_title, &Active, iw.window_flags);
-					{
-						iw.WindowPos = ImGui::GetWindowPos();
-						imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
 
-						if (ImGui::Button("Home page") == true) {
-							Cheat::Tabs = 1;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Misc page") == true) {
-							Cheat::Tabs = 2;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Settings page") == true) {
-							Cheat::Tabs = 3;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Performance page") == true) {
-							Cheat::Tabs = 4;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Aimbot and shit") == true) {
-							Cheat::Tabs = 5;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Spotify Shit") == true) {
-							Cheat::Tabs = 6;
-						}
-						ImGui::Separator();
-
-					}
 					break;
 
 
 				case 6:
-					ImGui::Begin(iw.window_title, &Active, iw.window_flags);
-					{
-						iw.WindowPos = ImGui::GetWindowPos();
-						imGuiDrawShit::DrawBackGroundGif(iw.WindowPos.x, iw.WindowPos.y, iw.window_size.x, iw.window_size.y);
 
-						if (ImGui::Button("Home page") == true) {
-							Cheat::Tabs = 1;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Misc page") == true) {
-							Cheat::Tabs = 2;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Settings page") == true) {
-							Cheat::Tabs = 3;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Performance page") == true) {
-							Cheat::Tabs = 4;
-						}
-						if (ImGui::Button("Aimbot and shit") == true) {
-							Cheat::Tabs = 5;
-						}
-						ImGui::SameLine();
-						if (ImGui::Button("Spotify Shit") == true) {
-							Cheat::Tabs = 6;
-						}
-						ImGui::Separator();
 						ImGui::Checkbox("Spotify mode", &Spotify::SpotifyMode);
 						ImGui::Spacing();/*
 						ImGui::Checkbox("Lyrics And shit", &Cheat::Active4);
@@ -3412,8 +3651,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 						if (ImGui::Button("No Ads (coming soon)") == true) {
 							Spotify::NoAds();
 						}*/
-					}
-
 
 					break;
 				}
@@ -3447,6 +3684,13 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 HMODULE Modulestored = NULL;
 
+void UnloadCmd() {
+    if (Cheat::ConsoleHandle) {
+        FreeConsole();
+        SendMessage(Cheat::ConsoleHandle, WM_CLOSE, 0, 0);
+    }
+}
+
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
 	bool init_hook = false;
@@ -3464,34 +3708,51 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 		Cheat::CheatMainRun();
 		Sleep(1);
 	}
+
 		MH_DisableHook(MH_ALL_HOOKS); 
-		FreeConsole();
+        UnloadCmd();
 		MH_Uninitialize();
 		kiero::unbind(8);
 	return TRUE;
 }
 
 
+
+bool IsMouseInsideImGuiMenu()
+{
+    ImGuiIO& io = ImGui::GetIO();
+    return ImGui::IsWindowHovered(ImGuiHoveredFlags_AnyWindow) || io.WantCaptureMouse;
+}
+
+
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 
-	Cheat::Vals::hWnd = hWnd;
-	Cheat::Vals::uMsg = uMsg;
-	Cheat::Vals::wParam = wParam;
-	Cheat::Vals::lParam = lParam;
-	if (Cheat::GetVals == false) {
-		Cheat::GetVals = true;
-		GetWindowRect(hWnd, &Cheat::Dawg);
-		Cheat::windowWidth = Cheat::Dawg.right;
-		Cheat::windowHeight = Cheat::Dawg.bottom;
-		Cheat::Start = true;
-	}
+    Cheat::Vals::hWnd = hWnd;
+    Cheat::Vals::uMsg = uMsg;
+    Cheat::Vals::wParam = wParam;
+    Cheat::Vals::lParam = lParam;
+    if (Cheat::GetVals == false) {
+        Cheat::GetVals = true;
+        GetWindowRect(hWnd, &Cheat::Dawg);
+        Cheat::windowWidth = Cheat::Dawg.right;
+        Cheat::windowHeight = Cheat::Dawg.bottom;
+        Cheat::Start = true;
+    }
 
-	if (Cheat::Cheatclosed == false) {
-		if (true && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
-			return true;
-	}
-	return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
+    if (Cheat::Cheatclosed == false && init) {
+        if (IsMouseInsideImGuiMenu() == true) {
+            ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
+            return true;
+        }
+        else
+        {
+            return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
+        }
+    }
+
+
+    return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
 
