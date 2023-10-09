@@ -7,7 +7,10 @@ Educational Use Only
 
 # Work of other People i used:
 Imgui-Directx11 hook base used from: https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook
+
 json lib:https://github.com/open-source-parsers/jsoncpp
+
 image lib:https://github.com/nothings/stb
+
 Dumper i used for this: https://github.com/Encryqed/Dumper-7
 
